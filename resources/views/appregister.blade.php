@@ -122,6 +122,7 @@
                                                 </select>
                                         </div>
                                         <div class="mb-3">
+                                            <label for="minor" class="form-label">Minor</label>
                                             <input type="text" class="form-control" id="minor" name="minor" placeholder="">
                                             <h6><i>*If any. Put N/A if not applicable.</i></h6>
                                         </div>
