@@ -9,7 +9,7 @@
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         
         <!-- Favicon -->
-        <link rel="stylesheet" href="{{asset('assets/images/favicon.ico')}}">
+        <link rel="stylesheet" href="{{asset('assets/images/sdo.png')}}">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
