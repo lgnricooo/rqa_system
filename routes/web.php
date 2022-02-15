@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ApplicantController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/applogin', function () {
+    return view('applogin');
 });
 
 Auth::routes();
 
+Route::post('store', [App\Http\Controllers\ApplicantController::class, 'store'])->name('applicant');
+Route::get('/appregister', [App\Http\Controllers\ApplicantController::class, 'index'])->name('appregister');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
