@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::post('store', [App\Http\Controllers\ApplicantController::class, 'store'])->name('applicant');
 Route::get('/appregister', [App\Http\Controllers\ApplicantController::class, 'index'])->name('appregister');
+Route::get('/applogin', [App\Http\Controllers\ApplicantController::class, 'applogin'])->name('applogin');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

@@ -206,7 +206,7 @@
                                     </form>
                                     <div class="mt-5 text-center">
                                         <div>
-                                            <p>Already have an account ? <a href="" class="fw-medium text-primary"> Login</a> </p>
+                                            <p>Already have an account ? <a href="{{route('applogin')}}" class="fw-medium text-primary"> Login</a> </p>
                                         </div>
                                     </div>
                                 </div>

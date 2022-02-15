@@ -25,6 +25,11 @@ class ApplicantController extends Controller
         return view('appregister');
     }
 
+    public function applogin()
+    {
+        return view('applogin');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
