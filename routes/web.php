@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/applogin', function () {
-    return view('applogin');
+Route::get('/', function () {
+    return view('welcome');
 });
 
 Auth::routes();
