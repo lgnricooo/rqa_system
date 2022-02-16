@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('level')->nullable();
             $table->string('district')->nullable();
             $table->string('school')->nullable();
-            $table->boolean('role')->nullable();
+            $table->integer('role')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
