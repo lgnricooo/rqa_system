@@ -74,9 +74,23 @@
                                                 <select class="form-select" name="retain">
                                                     <option value="N/A">N/A</option>
                                                     <option value="Retain Score">Retain Score</option>
-                                                    <option value="Undergo Demo Teaching">Undergo Demo Teaching</option>
+                                                    <option value="Update Score">Update Score</option>
                                                 </select>
                                             </div>
+                                        </div>
+                                        <div class="mb-3" id="ept">
+                                            <label class="col-md-5 col-form-label">Did you take the English Proficiency Test?</label>
+                                            <div class="col-md-13">
+                                                <select class="form-select" name="ept">
+                                                    <option value="N/A">N/A</option>
+                                                    <option value="Yes">Yes</option>
+                                                    <option value="No">No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="ept_date" id="ept_da">
+                                            <label for="ept_d" class="form-label">Date of Examination</label>
+                                            <input type="date" class="form-control" id="ept_d" name="ept_date">  
                                         </div>
                                         <div class="mb-3">
                                             <label for="uniqueid" class="form-label">Unique Code</label>
@@ -245,6 +259,8 @@
                 $('#retain').hide();
                 $('#district').hide();
                 $('#school').hide();
+                $('#ept').hide();
+                $('#ept_da').hide();
             })
 
             $('#newold').on('change',function(){
@@ -255,6 +271,18 @@
                 else
                 {
                     $('#retain').hide();
+                }
+            });
+
+            $('#ept').on('change',function(){
+                if(this.value == 'Yes')
+                {
+                    $('#ept_da').show();
+                }
+                else if (this.value == 'No')
+                {
+                    $('#ept_da').hide();
+                    $('#ept_d').val("N/A");
                 }
             });
 

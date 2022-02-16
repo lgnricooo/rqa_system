@@ -51,6 +51,8 @@ class ApplicantController extends Controller
         $request->validate([
             'newold' => ['required'],
             'retain' => ['nullable'],
+            'ept' => ['nullable'],
+            'ept_date' => ['nullable'],
             'unique_code' => ['required'],
             'name' => ['required'],
             'email' => ['required'],
@@ -69,6 +71,8 @@ class ApplicantController extends Controller
         $userapplicant = new User();
         $userapplicant->newold = $request->newold;
         $userapplicant->retain = $request->retain;
+        $userapplicant->ept = $request->ept;
+        $userapplicant->ept_date = $request->ept_date;
         $userapplicant->unique_code = $request->unique_code;
         $userapplicant->name = $request->name;
         $userapplicant->email = $request->email;

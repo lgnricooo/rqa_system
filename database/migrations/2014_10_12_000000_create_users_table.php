@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('newold')->nullable();
             $table->string('retain')->nullable();
+            $table->string('ept')->nullable();
+            $table->string('ept_date')->nullable();
             $table->string('unique_code')->nullable();
             $table->string('name')->nullable();
             $table->string('email')->nullable();
