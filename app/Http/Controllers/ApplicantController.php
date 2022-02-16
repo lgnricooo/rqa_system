@@ -85,7 +85,7 @@ class ApplicantController extends Controller
         $userapplicant->level = $request->level;
         $userapplicant->district = $request->district;
         $userapplicant->school = $request->school;
-        $userapplicant->role = '3';
+        $userapplicant->role = 3;
         $userapplicant->password = Hash::make($request->password);
 
         $count = DB::table('users')->where('level', '=', $userapplicant->level)
