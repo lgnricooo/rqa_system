@@ -81,7 +81,7 @@
                                         <div class="mb-3" id="ept">
                                             <label class="col-md-5 col-form-label">Did you take the English Proficiency Test?</label>
                                             <div class="col-md-13">
-                                                <select class="form-select" name="ept">
+                                                <select class="form-select" id="ept_test" name="ept">
                                                     <option value="N/A">N/A</option>
                                                     <option value="Yes">Yes</option>
                                                     <option value="No">No</option>
@@ -275,7 +275,7 @@
                 }
             });
 
-            $('#ept').on('change',function(){
+            $('#ept_test').on('change',function(){
                 if(this.value == 'Yes')
                 {
                     $('#ept_da').show();
