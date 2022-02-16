@@ -267,6 +267,7 @@
                 if(this.value == 'Old Applicant')
                 {
                     $('#retain').show();
+                    $('#ept').show();
                 }
                 else
                 {
