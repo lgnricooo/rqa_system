@@ -95,19 +95,19 @@ class ApplicantController extends Controller
         {
             $userapplicant->save();
             Alert::success('Success', 'Registered Succesfully');
-            return redirect()->back();
+            return redirect()->back()->with('success', 'You have successfully registered');
         }
         elseif ($userapplicant->level == 'Secondary - SHS' && $count <= '2')
         {
             $userapplicant->save();
             Alert::success('Success', 'Registered Succesfully');
-            return redirect()->back();
+            return redirect()->back()->with('success', 'You have successfully registered');
         }
         elseif ($userapplicant->level == 'Elementary' && $count <= '1')
         {
             $userapplicant->save();
             Alert::success('Success', 'Registered Succesfully');
-            return redirect()->back();
+            return redirect()->back()->with('success', 'You have successfully registered');
         }
         else
         {
