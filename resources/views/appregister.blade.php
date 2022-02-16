@@ -208,6 +208,7 @@
                                                     <option value="Gosi National High School (SHS)">Gosi National High School (SHS)</option>
                                                     <option value="Tuguegarao City West High School (SHS)">Tuguegarao City West High School (SHS)</option>
                                                     <option value="Tuguegarao City Science High School (SHS)">Tuguegarao City Science High School (SHS)</option>
+                                                    <option value="Carig Integrated School (SHS)">Carig Integrated School (SHS)</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -331,6 +332,7 @@
                         $(".form-select option[value='Gosi National High School (SHS)']").hide();
                         $(".form-select option[value='Tuguegarao City West High School (SHS)']").hide();
                         $(".form-select option[value='Tuguegarao City Science High School (SHS)']").hide();
+                        $(".form-select option[value='Carig Integrated School (SHS)']").hide();
                     }
                     else
                     {
@@ -368,6 +370,7 @@
                         $(".form-select option[value='Gosi National High School (SHS)']").show();
                         $(".form-select option[value='Tuguegarao City West High School (SHS)']").show();
                         $(".form-select option[value='Tuguegarao City Science High School (SHS)']").show();
+                        $(".form-select option[value='Carig Integrated School (SHS)']").show();
                         if(this.value == 'Secondary - SHS')
                         {
                             $('#school').show();
@@ -500,6 +503,7 @@
                     $(".form-select option[value='Gosi National High School (SHS)']").hide();
                     $(".form-select option[value='Tuguegarao City West High School (SHS)']").hide();
                     $(".form-select option[value='Tuguegarao City Science High School (SHS)']").hide();
+                    $(".form-select option[value='Carig Integrated School (SHS)']").hide();
                 }
                 else
                 {
@@ -542,6 +546,7 @@
                     $(".form-select option[value='Gosi National High School (SHS)']").show();
                     $(".form-select option[value='Tuguegarao City West High School (SHS)']").show();
                     $(".form-select option[value='Tuguegarao City Science High School (SHS)']").show();
+                    $(".form-select option[value='Carig Integrated School (SHS)']").show();
                     if(this.value == 'Tuguegarao West District')
                     {
                         $('#school').show();
@@ -584,6 +589,7 @@
                         $(".form-select option[value='Gosi National High School (SHS)']").hide();
                         $(".form-select option[value='Tuguegarao City West High School (SHS)']").hide();
                         $(".form-select option[value='Tuguegarao City Science High School (SHS)']").hide();
+                        $(".form-select option[value='Carig Integrated School (SHS)']").hide();
                     }
                     else
                     {
@@ -626,6 +632,7 @@
                         $(".form-select option[value='Gosi National High School (SHS)']").show();
                         $(".form-select option[value='Tuguegarao City West High School (SHS)']").show();
                         $(".form-select option[value='Tuguegarao City Science High School (SHS)']").show();
+                        $(".form-select option[value='Carig Integrated School (SHS)']").show();
                         if (this.value == 'Tuguegarao East District')
                         {
                             $('#school').show();
@@ -668,6 +675,7 @@
                             $(".form-select option[value='Gosi National High School (SHS)']").hide();
                             $(".form-select option[value='Tuguegarao City West High School (SHS)']").hide();
                             $(".form-select option[value='Tuguegarao City Science High School (SHS)']").hide();
+                            $(".form-select option[value='Carig Integrated School (SHS)']").hide();
                         }
                         else
                         {
@@ -710,6 +718,7 @@
                             $(".form-select option[value='Gosi National High School (SHS)']").show();
                             $(".form-select option[value='Tuguegarao City West High School (SHS)']").show();
                             $(".form-select option[value='Tuguegarao City Science High School (SHS)']").show();
+                            $(".form-select option[value='Carig Integrated School (SHS)']").show();
                             if(this.value == 'Tuguegarao NorthEast District')
                             {
                                 $('#school').show();
@@ -753,6 +762,7 @@
                                 $(".form-select option[value='Gosi National High School (SHS)']").hide();
                                 $(".form-select option[value='Tuguegarao City West High School (SHS)']").hide();
                                 $(".form-select option[value='Tuguegarao City Science High School (SHS)']").hide();
+                                $(".form-select option[value='Carig Integrated School (SHS)']").hide();
                             }
                             else
                             {
@@ -796,6 +806,7 @@
                                 $(".form-select option[value='Gosi National High School (SHS)']").show();
                                 $(".form-select option[value='Tuguegarao City West High School (SHS)']").show();
                                 $(".form-select option[value='Tuguegarao City Science High School (SHS)']").show();
+                                $(".form-select option[value='Carig Integrated School (SHS)']").show();
                             }
                         }
                     }
