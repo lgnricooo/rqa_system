@@ -4,9 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>SDO RQA SYSTEM</title>
 
         <!-- Fonts -->
+        <link rel="shortcut icon" href="{{asset('assets/images/sdo.png')}}">
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!-- Styles -->
@@ -36,8 +37,8 @@
     </head>
     <body class="antialiased">
             <div class="button-div">
-                <button type="button" class="btn btn-outline-primary">ADMIN</button>
-                <button type="button" class="btn btn-outline-primary">SECRETARY
+                <button type="button" class="btn btn-outline-primary"><a href="{{route('applogin')}}">ADMIN</a></button>
+                <button type="button" class="btn btn-outline-primary"><a href="{{route('applogin')}}">SECRETARY</a>
                 </button>
             </div>
         <div class="center">
