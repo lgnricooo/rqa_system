@@ -22,7 +22,7 @@
                 width: 50%;
             }
             .center {
-                margin-top:-250px;
+                margin-top:3250px;
                 height: 1%;
                 display: flex;
                 align-items: center;
