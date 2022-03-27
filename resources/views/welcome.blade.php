@@ -22,7 +22,7 @@
                 width: 50%;
             }
             .center {
-                margin-top:-150px;
+                margin-top:-250px;
                 height: 1%;
                 display: flex;
                 align-items: center;
@@ -35,11 +35,10 @@
         </style>
     </head>
     <body class="antialiased">
-            <div class="button-div">
-                <button type="button" class="btn btn-outline-primary">ADMIN</button>
-                <button type="button" class="btn btn-outline-primary">SECRETARY
-                </button>
-            </div>
+        <div class="button-div">
+            <button type="button" class="btn btn-outline-primary"><a href="{{route('applogin')}}">ADMIN</a></button>
+            <button type="button" class="btn btn-outline-primary"><a href="{{route('applogin')}}">SECRETARY</button>
+        </div>
         <div class="center">
             <img src="{{asset('assets/images/rqa.png')}}" alt="" />
         </div>
