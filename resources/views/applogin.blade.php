@@ -62,11 +62,11 @@
                                 </div>
                                 <div class="p-2">
                                     <h4 style="color:red">Don't Login!</h4>
-                                    <form class="form-horizontal" method="post" action="">
+                                    <form class="form-horizontal" method="post" action="{{ route('login') }}">
                                         @csrf
                                             <div class="mb-3">
-                                                <label for="username" class="form-label">Username</label>
-                                                <input type="text" class="form-control" id="username" name="unique_code" placeholder="Enter username">
+                                                <label for="email" class="form-label">Email</label>
+                                                <input type="text" class="form-control" id="email" name="email" placeholder="Enter username">
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Password</label>

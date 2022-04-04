@@ -36,8 +36,8 @@
     </head>
     <body class="antialiased">
         <div class="button-div">
-            <button type="button" class="btn btn-outline-primary"><a href="{{route('applogin')}}">ADMIN</a></button>
-            <button type="button" class="btn btn-outline-primary"><a href="{{route('applogin')}}">SECRETARY</button>
+            <button type="button" class="btn btn-outline-primary"><a href="{{route('login')}}">ADMIN</a></button>
+            <button type="button" class="btn btn-outline-primary"><a href="{{route('login')}}">SECRETARY</button>
         </div>
         <div class="center">
             <img src="{{asset('assets/images/rqa.png')}}" alt="" />

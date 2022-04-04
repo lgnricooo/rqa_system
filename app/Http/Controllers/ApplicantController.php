@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Session;
 
 class ApplicantController extends Controller
 {
@@ -22,12 +23,27 @@ class ApplicantController extends Controller
      */
     public function index()
     {
+        return view('applicant.index');
+    }
+
+    public function appregister()
+    {
         return view('appregister');
     }
+
 
     public function applogin()
     {
         return view('applogin');
+    }
+
+    public function perform()
+    {
+        Session::flush();
+        
+        Auth::logout();
+
+        return redirect('applogin');
     }
 
     /**
