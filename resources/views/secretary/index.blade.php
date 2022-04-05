@@ -87,12 +87,12 @@
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img class="rounded-circle header-profile-user" src="{{asset('assets/images/users/user.jpg')}}"
                                     alt="Header Avatar">
-                                <span class="d-none d-xl-inline-block ms-1" key="t-henry">Henry</span>
+                                <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{Auth::user()->name}}</span>
                                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
-                                <a class="dropdown-item text-danger" href="{{route('applicant.logout')}}"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
+                                <a class="dropdown-item text-danger" href="{{route('admin.logout')}}"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
                             </div>
                         </div>
                     </div>
@@ -111,117 +111,120 @@
                             <li class="menu-title" key="t-menu">Menu</li>
 
                             <li>
-                                <a href="javascript: void(0);" class="waves-effect">
+                                <a href="{{route('secretary.dashboard')}}" class="waves-effect">
                                     <i class="bx bx-home-circle"></i>
                                     <span key="t-dashboards">Dashboards</span>
                                 </a>
                             </li>
+                            @if (Auth::user()->level == "Elementary")
+                                <li class="menu-title" key="t-apps">District</li>
 
-                            <li class="menu-title" key="t-apps">District</li>
+                                <li>
+                                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                        <i class="bx bx-store"></i>
+                                        <span key="t-ecommerce">North District</span>
+                                    </a>
+                                    <ul class="sub-menu" aria-expanded="false">
+                                        <li><a href="{{route('secretary.tncs')}}" key="t-products">TNCS</a></li>
+                                        <li><a href="{{route('secretary.pallua')}}" key="t-product-detail">Pallua ES</a></li>
+                                        <li><a href="{{route('secretary.caritan')}}" key="t-orders">Caritan Norte ES</a></li>
+                                        <li><a href="{{route('secretary.atulayan')}}" key="t-customers">Atulayan ES</a></li>
+                                        <li><a href="{{route('secretary.annafunan')}}" key="t-cart">Annafunan ES</a></li>
+                                        <li><a href="{{route('secretary.bagay')}}" key="t-checkout">Bagay ES</a></li>
+                                    </ul>
+                                </li>
 
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-store"></i>
-                                    <span key="t-ecommerce">North District</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="ecommerce-products.html" key="t-products">Products</a></li>
-                                    <li><a href="ecommerce-product-detail.html" key="t-product-detail">Product Detail</a></li>
-                                    <li><a href="ecommerce-orders.html" key="t-orders">Orders</a></li>
-                                    <li><a href="ecommerce-customers.html" key="t-customers">Customers</a></li>
-                                    <li><a href="ecommerce-cart.html" key="t-cart">Cart</a></li>
-                                    <li><a href="ecommerce-checkout.html" key="t-checkout">Checkout</a></li>
-                                    <li><a href="ecommerce-shops.html" key="t-shops">Shops</a></li>
-                                    <li><a href="ecommerce-add-product.html" key="t-add-product">Add Product</a></li>
-                                </ul>
-                            </li>
+                                <li>
+                                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                        <i class="bx bx-store"></i>
+                                        <span key="t-ecommerce">East District</span>
+                                    </a>
+                                    <ul class="sub-menu" aria-expanded="false">
+                                        <li><a href="{{route('secretary.tecs')}}" key="t-products">TECS</a></li>
+                                        <li><a href="{{route('secretary.taggad')}}" key="t-product-detail">Tagga-Dadda ES</a></li>
+                                        <li><a href="{{route('secretary.dadda')}}" key="t-orders">Dadda ES</a></li>
+                                        <li><a href="{{route('secretary.capatan')}}" key="t-customers">Capatan IS</a></li>
+                                        <li><a href="{{route('secretary.namabbalan')}}" key="t-cart">Namabbalan IS</a></li>
+                                        <li><a href="{{route('secretary.libag')}}" key="t-checkout">Libag IS</a></li>
+                                        <li><a href="{{route('secretary.gosi')}}" key="t-shops">Gosi ES</a></li>
+                                    </ul>
+                                </li>
 
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-store"></i>
-                                    <span key="t-ecommerce">East District</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="ecommerce-products.html" key="t-products">Products</a></li>
-                                    <li><a href="ecommerce-product-detail.html" key="t-product-detail">Product Detail</a></li>
-                                    <li><a href="ecommerce-orders.html" key="t-orders">Orders</a></li>
-                                    <li><a href="ecommerce-customers.html" key="t-customers">Customers</a></li>
-                                    <li><a href="ecommerce-cart.html" key="t-cart">Cart</a></li>
-                                    <li><a href="ecommerce-checkout.html" key="t-checkout">Checkout</a></li>
-                                    <li><a href="ecommerce-shops.html" key="t-shops">Shops</a></li>
-                                    <li><a href="ecommerce-add-product.html" key="t-add-product">Add Product</a></li>
-                                </ul>
-                            </li>
+                                <li>
+                                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                        <i class="bx bx-store"></i>
+                                        <span key="t-ecommerce">West District</span>
+                                    </a>
+                                    <ul class="sub-menu" aria-expanded="false">
+                                        <li><a href="{{route('secretary.twcs')}}" key="t-products">TWCS</a></li>
+                                        <li><a href="{{route('secretary.buntun')}}" key="t-product-detail">Buntun ES</a></li>
+                                        <li><a href="{{route('secretary.ugac')}}" key="t-orders">Ugac ES</a></li>
+                                        <li><a href="{{route('secretary.sangab')}}" key="t-customers">San Gabriel ES</a></li>
+                                        <li><a href="{{route('secretary.catnuevo')}}" key="t-cart">Cataggaman Nuevo ES</a></li>
+                                        <li><a href="{{route('secretary.catpardo')}}" key="t-checkout">Cataggaman Pardo ES</a></li>
+                                        <li><a href="{{route('secretary.cates')}}" key="t-shops">Cataggaman ES</a></li>
+                                    </ul>
+                                </li>
 
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-store"></i>
-                                    <span key="t-ecommerce">West District</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="ecommerce-products.html" key="t-products">Products</a></li>
-                                    <li><a href="ecommerce-product-detail.html" key="t-product-detail">Product Detail</a></li>
-                                    <li><a href="ecommerce-orders.html" key="t-orders">Orders</a></li>
-                                    <li><a href="ecommerce-customers.html" key="t-customers">Customers</a></li>
-                                    <li><a href="ecommerce-cart.html" key="t-cart">Cart</a></li>
-                                    <li><a href="ecommerce-checkout.html" key="t-checkout">Checkout</a></li>
-                                    <li><a href="ecommerce-shops.html" key="t-shops">Shops</a></li>
-                                    <li><a href="ecommerce-add-product.html" key="t-add-product">Add Product</a></li>
-                                </ul>
-                            </li>
+                                <li>
+                                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                        <i class="bx bx-store"></i>
+                                        <span key="t-ecommerce">NorthEast District</span>
+                                    </a>
+                                    <ul class="sub-menu" aria-expanded="false">
+                                        <li><a href="{{route('secretary.tnecs')}}" key="t-products">TNECS</a></li>
+                                        <li><a href="{{route('secretary.carig')}}" key="t-product-detail">Carig IS</a></li>
+                                        <li><a href="{{route('secretary.carigno')}}" key="t-orders">Carig Norte ES</a></li>
+                                        <li><a href="{{route('secretary.linao')}}" key="t-customers">Linao ES</a></li>
+                                        <li><a href="{{route('secretary.larionba')}}" key="t-cart">Larion Bajo ES</a></li>
+                                        <li><a href="{{route('secretary.larional')}}" key="t-checkout">Larion Alto ES</a></li>
+                                        <li><a href="{{route('secretary.balzain')}}" key="t-shops">Balzain East ES</a></li>
+                                        <li><a href="{{route('secretary.pengue')}}" key="t-add-product">Pengue-Ruyu ES</a></li>
+                                    </ul>
+                                </li>
 
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-store"></i>
-                                    <span key="t-ecommerce">NorthEast District</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="ecommerce-products.html" key="t-products">Products</a></li>
-                                    <li><a href="ecommerce-product-detail.html" key="t-product-detail">Product Detail</a></li>
-                                    <li><a href="ecommerce-orders.html" key="t-orders">Orders</a></li>
-                                    <li><a href="ecommerce-customers.html" key="t-customers">Customers</a></li>
-                                    <li><a href="ecommerce-cart.html" key="t-cart">Cart</a></li>
-                                    <li><a href="ecommerce-checkout.html" key="t-checkout">Checkout</a></li>
-                                    <li><a href="ecommerce-shops.html" key="t-shops">Shops</a></li>
-                                    <li><a href="ecommerce-add-product.html" key="t-add-product">Add Product</a></li>
-                                </ul>
-                            </li>
+                            @elseif (Auth::user()->level == "Secondary - JHS")
+                                <li class="menu-title" key="t-pages">Secondary</li>
 
-                            <li class="menu-title" key="t-pages">Secondary</li>
+                                <li>
+                                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                        <i class="bx bx-store"></i>
+                                        <span key="t-ecommerce">Junior High School</span>
+                                    </a>
+                                    <ul class="sub-menu" aria-expanded="false">
+                                        <li><a href="{{route('secretary.cnhs')}}" key="t-products">CNHS</a></li>
+                                        <li><a href="{{route('secretary.catnhs')}}" key="t-product-detail">Catag. NHS</a></li>
+                                        <li><a href="{{route('secretary.lnhs')}}" key="t-orders">Linao NHS</a></li>
+                                        <li><a href="{{route('secretary.gnhs')}}" key="t-customers">Gosi NHS</a></li>
+                                        <li><a href="{{route('secretary.tugwest')}}" key="t-cart">Tug. City West HS</a></li>
+                                        <li><a href="{{route('secretary.tugscie')}}" key="t-checkout">Tug. City Science HS</a></li>
+                                        <li><a href="{{route('secretary.annafunanis')}}" key="t-shops">Annafunan IS</a></li>
+                                        <li><a href="{{route('secretary.carigis')}}" key="t-add-product">Carig IS</a></li>
+                                        <li><a href="{{route('secretary.libagis')}}" key="t-add-product">Libag IS</a></li>
+                                        <li><a href="{{route('secretary.namabbalanis')}}" key="t-add-product">Namabbalan IS</a></li>
+                                        <li><a href="{{route('secretary.capatanis')}}" key="t-add-product">Capatan IS</a></li>
+                                    </ul>
+                                </li>
 
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-store"></i>
-                                    <span key="t-ecommerce">Junior High School</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="ecommerce-products.html" key="t-products">Products</a></li>
-                                    <li><a href="ecommerce-product-detail.html" key="t-product-detail">Product Detail</a></li>
-                                    <li><a href="ecommerce-orders.html" key="t-orders">Orders</a></li>
-                                    <li><a href="ecommerce-customers.html" key="t-customers">Customers</a></li>
-                                    <li><a href="ecommerce-cart.html" key="t-cart">Cart</a></li>
-                                    <li><a href="ecommerce-checkout.html" key="t-checkout">Checkout</a></li>
-                                    <li><a href="ecommerce-shops.html" key="t-shops">Shops</a></li>
-                                    <li><a href="ecommerce-add-product.html" key="t-add-product">Add Product</a></li>
-                                </ul>
-                            </li>
+                            @elseif (Auth::user()->level == "Secondary - SHS")
+                                <li class="menu-title" key="t-pages">Secondary</li>
 
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-store"></i>
-                                    <span key="t-ecommerce">Senior High School</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="ecommerce-products.html" key="t-products">Products</a></li>
-                                    <li><a href="ecommerce-product-detail.html" key="t-product-detail">Product Detail</a></li>
-                                    <li><a href="ecommerce-orders.html" key="t-orders">Orders</a></li>
-                                    <li><a href="ecommerce-customers.html" key="t-customers">Customers</a></li>
-                                    <li><a href="ecommerce-cart.html" key="t-cart">Cart</a></li>
-                                    <li><a href="ecommerce-checkout.html" key="t-checkout">Checkout</a></li>
-                                    <li><a href="ecommerce-shops.html" key="t-shops">Shops</a></li>
-                                    <li><a href="ecommerce-add-product.html" key="t-add-product">Add Product</a></li>
-                                </ul>
-                            </li>
+                                <li>
+                                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                        <i class="bx bx-store"></i>
+                                        <span key="t-ecommerce">Senior High School</span>
+                                    </a>
+                                    <ul class="sub-menu" aria-expanded="false">
+                                        <li><a href="{{route('secretary.cnhsshs')}}" key="t-products">CNHS</a></li>
+                                        <li><a href="{{route('secretary.catnhsshs')}}" key="t-product-detail">Catag. NHS</a></li>
+                                        <li><a href="{{route('secretary.lnhsshs')}}" key="t-orders">Linao NHS</a></li>
+                                        <li><a href="{{route('secretary.gnhsshs')}}" key="t-customers">Gosi NHS</a></li>
+                                        <li><a href="{{route('secretary.tugwestshs')}}" key="t-cart">Tug. City West HS</a></li>
+                                        <li><a href="{{route('secretary.tugscieshs')}}" key="t-checkout">Tug. City Science HS</a></li>
+                                        <li><a href="{{route('secretary.carigisshs')}}" key="t-shops">Carig IS</a></li>
+                                    </ul>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                     <!-- Sidebar -->
