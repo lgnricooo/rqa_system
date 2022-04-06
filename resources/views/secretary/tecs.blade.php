@@ -307,8 +307,37 @@
                                                         <td>{{ $users->con_number }}</td>
                                                         <td>{{ $users->address }}</td>
                                                         <td>
-                                                            <a href="" class="btn btn-primary">View Details</a>
-                                                            <a href="" class="btn btn-primary">Enter Grade</a>
+                                                            <!-- Large modal button -->
+                                                            <button type="button" class="btn btn-light waves-effect" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">View Details</button>
+                                                            <!-- Large modal button -->
+                                                            <button type="button" class="btn btn-light waves-effect" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">Enter Grades</button>
+                                                            
+                                                                <!--  Large modal example -->
+                                                                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-lg">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="myLargeModalLabel">Large modal</h5>
+                                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <p>Cras mattis consectetur purus sit amet fermentum.
+                                                                                    Cras justo odio, dapibus ac facilisis in,
+                                                                                    egestas eget quam. Morbi leo risus, porta ac
+                                                                                    consectetur ac, vestibulum at eros.</p>
+                                                                                <p>Praesent commodo cursus magna, vel scelerisque
+                                                                                    nisl consectetur et. Vivamus sagittis lacus vel
+                                                                                    augue laoreet rutrum faucibus dolor auctor.</p>
+                                                                                <p class="mb-0">Aenean lacinia bibendum nulla sed consectetur.
+                                                                                    Praesent commodo cursus magna, vel scelerisque
+                                                                                    nisl consectetur et. Donec sed odio dui. Donec
+                                                                                    ullamcorper nulla non metus auctor
+                                                                                    fringilla.</p>
+                                                                            </div>
+                                                                        </div><!-- /.modal-content -->
+                                                                    </div><!-- /.modal-dialog -->
+                                                                </div><!-- /.modal -->
+                                                            
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -352,6 +381,7 @@
         <div class="rightbar-overlay"></div>
 
         <!-- JAVASCRIPT -->
+        <script src="{{asset('assets/js/pages/modal.init.js')}}"></script>
         <script src="{{asset('assets/libs/jquery/jquery.min.js')}}"></script>
         <script src="{{asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('assets/libs/metismenu/metisMenu.min.js')}}"></script>
@@ -376,7 +406,9 @@
         <script src="{{asset('assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
 
         <!-- Datatable init js -->
-        <script src="{{asset('assets/js/pages/datatables.init.js')}}"></script>    
+        <script src="{{asset('assets/js/pages/datatables.init.js')}}"></script>
+        
+        
 
         <script src="{{asset('assets/js/app.js')}}"></script>
     </body>
