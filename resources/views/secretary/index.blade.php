@@ -116,7 +116,7 @@
                                     <span key="t-dashboards">Dashboards</span>
                                 </a>
                             </li>
-                            @if (Auth::user()->level == "Elementary")
+                            @if (Auth::user()->level == "Elementary" && Auth::user()->district == "Tuguegarao North District")
                                 <li class="menu-title" key="t-apps">District</li>
 
                                 <li>
@@ -134,6 +134,9 @@
                                     </ul>
                                 </li>
 
+                            @elseif (Auth::user()->level == "Elementary" && Auth::user()->district == "Tuguegarao East District")
+                                <li class="menu-title" key="t-apps">District</li>
+
                                 <li>
                                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                                         <i class="bx bx-store"></i>
@@ -150,6 +153,9 @@
                                     </ul>
                                 </li>
 
+                            @elseif (Auth::user()->level == "Elementary" && Auth::user()->district == "Tuguegarao West District")
+                                <li class="menu-title" key="t-apps">District</li>
+                                
                                 <li>
                                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                                         <i class="bx bx-store"></i>
@@ -165,6 +171,9 @@
                                         <li><a href="{{route('secretary.cates')}}" key="t-shops">Cataggaman ES</a></li>
                                     </ul>
                                 </li>
+
+                            @elseif (Auth::user()->level == "Elementary" && Auth::user()->district == "Tuguegarao NorthEast District")
+                                <li class="menu-title" key="t-apps">District</li>
 
                                 <li>
                                     <a href="javascript: void(0);" class="has-arrow waves-effect">
