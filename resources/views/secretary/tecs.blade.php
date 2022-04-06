@@ -14,6 +14,8 @@
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
         <!-- Bootstrap Css -->
+        
+
         <link href="{{asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
 
@@ -310,34 +312,50 @@
                                                             <!-- Large modal button -->
                                                             <button type="button" class="btn btn-light waves-effect" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">View Details</button>
                                                             <!-- Large modal button -->
-                                                            <button type="button" class="btn btn-light waves-effect" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">Enter Grades</button>
                                                             
+                                                            <div>
                                                                 <!--  Large modal example -->
                                                                 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                                                     <div class="modal-dialog modal-lg">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
-                                                                                <h5 class="modal-title" id="myLargeModalLabel">Large modal</h5>
+                                                                                <h5 class="modal-title" id="myLargeModalLabel">Applicant Details</h5>
                                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                             </div>
                                                                             <div class="modal-body">
-                                                                                <p>Cras mattis consectetur purus sit amet fermentum.
-                                                                                    Cras justo odio, dapibus ac facilisis in,
-                                                                                    egestas eget quam. Morbi leo risus, porta ac
-                                                                                    consectetur ac, vestibulum at eros.</p>
-                                                                                <p>Praesent commodo cursus magna, vel scelerisque
-                                                                                    nisl consectetur et. Vivamus sagittis lacus vel
-                                                                                    augue laoreet rutrum faucibus dolor auctor.</p>
-                                                                                <p class="mb-0">Aenean lacinia bibendum nulla sed consectetur.
-                                                                                    Praesent commodo cursus magna, vel scelerisque
-                                                                                    nisl consectetur et. Donec sed odio dui. Donec
-                                                                                    ullamcorper nulla non metus auctor
-                                                                                    fringilla.</p>
+                                                                            <div class="row">
+                                                                                <div class="col-xl-12">
+                                                                                    <div class="card">
+                                                                                        <div class="card-body">
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-5">
+                                                                                                        <label for="formrow-email-input" class="form-label">Name:</label>
+                                                                                                        <h5>{{ $users->name }}</h5>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-5">
+                                                                                                        <label for="formrow-password-input" class="form-label">Unique Code</label>
+                                                                                                        <h5>{{ $users->unique_code }}</h5>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="mb-3">
+                                                                                                <label for="formrow-firstname-input" class="form-label">Address</label>
+                                                                                                <h5>{{ $users->address }}</h5>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <!-- end card body -->
+                                                                                    </div>
+                                                                                    <!-- end card -->
+                                                                                </div>
+                                                                                <!-- end col -->
                                                                             </div>
                                                                         </div><!-- /.modal-content -->
                                                                     </div><!-- /.modal-dialog -->
                                                                 </div><!-- /.modal -->
-                                                            
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -381,6 +399,8 @@
         <div class="rightbar-overlay"></div>
 
         <!-- JAVASCRIPT -->
+        
+
         <script src="{{asset('assets/js/pages/modal.init.js')}}"></script>
         <script src="{{asset('assets/libs/jquery/jquery.min.js')}}"></script>
         <script src="{{asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -409,6 +429,7 @@
         <script src="{{asset('assets/js/pages/datatables.init.js')}}"></script>
         
         
+
 
         <script src="{{asset('assets/js/app.js')}}"></script>
     </body>
