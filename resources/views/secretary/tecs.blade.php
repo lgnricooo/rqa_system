@@ -15,7 +15,7 @@
 
         <!-- Bootstrap Css -->
         
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        hidden
         <link href="{{asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
 
@@ -101,7 +101,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
-                                <a class="dropdown-item text-danger" href="{{route('admin.logout')}}"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
+                                <a class="dropdown-item text-danger" href="{{route('secretary.logout')}}"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
                             </div>
                         </div>
                     </div>
@@ -419,7 +419,7 @@
                                                                         <span aria-hidden="true">&times;</span>
                                                                         </button>
                                                                     </div>
-                                                                    <form action="{{route('secretary.grade')}}" method="POST">
+                                                                    <form action="{{route('secretary.gradeshs')}}" method="POST">
                                                                         @csrf
                                                                         <div class="modal-body">
                                                                             <div class="row">
@@ -429,11 +429,11 @@
                                                                                             <div class="row">
                                                                                                 <div class="col-md-6">
                                                                                                     <div class="mb-3">
-                                                                                                        <input type="text" class="form-control" name="user_id" value="{{$users->id}}">
-                                                                                                        <input type="text" class="form-control" name="email" value="{{$users->email}}">
-                                                                                                        <input type="text" class="form-control" name="name" value="{{$users->name}}">
-                                                                                                        <input type="text" class="form-control" name="con_number" value="{{$users->con_number}}">
-                                                                                                        <input type="text" class="form-control" name="address" value="{{$users->address}}">
+                                                                                                        <input type="hidden" class="form-control" name="user_id" value="{{$users->id}}">
+                                                                                                        <input type="hidden" class="form-control" name="email" value="{{$users->email}}">
+                                                                                                        <input type="hidden" class="form-control" name="name" value="{{$users->name}}">
+                                                                                                        <input type="hidden" class="form-control" name="con_number" value="{{$users->con_number}}">
+                                                                                                        <input type="hidden" class="form-control" name="address" value="{{$users->address}}">
                                                                                                         <label for="formrow-email-input" class="form-label"><b>Name</b></label>
                                                                                                         <h6>{{ $users->name }}</h6>
                                                                                                     </div>

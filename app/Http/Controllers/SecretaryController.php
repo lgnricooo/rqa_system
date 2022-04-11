@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Session;
 
 class SecretaryController extends Controller
 {
@@ -125,11 +126,12 @@ class SecretaryController extends Controller
             'con_number' => ['required'],
             'education' => ['required'],
             'teaching_exp' => ['required'],
-            'let_pbet' => ['required'],
             'st_skills' => ['required'],
             'interview' => ['required'],
             'demo_teach' => ['required'],
             'comm_skills' => ['required'],
+            'major' => ['required'],
+            'out_achiev' => ['required'],
         ]);
 
         $usergrade = new Grades();
@@ -140,14 +142,14 @@ class SecretaryController extends Controller
         $usergrade->con_number = $request->con_number;
         $usergrade->education = $request->education;
         $usergrade->teaching_exp = $request->teaching_exp;
-        $usergrade->let_pbet = $request->let_pbet;
+        $usergrade->let_pbet = '0';
         $usergrade->st_skills = $request->st_skills;
         $usergrade->interview = $request->interview;
         $usergrade->demo_teach = $request->demo_teach;
         $usergrade->comm_skills = $request->comm_skills;
-        $usergrade->out_achiev = '0';
-        $usergrade->major = 'N/A';
-        $usergrade->total = $request->education + $request->teaching_exp + $request->let_pbet + $request->st_skills + $request->interview + $request->demo_teach + $request->comm_skills;
+        $usergrade->out_achiev = $request->out_achiev;
+        $usergrade->major = $request->major;
+        $usergrade->total = $request->education + $request->teaching_exp + $request->out_achiev + $request->st_skills + $request->interview + $request->demo_teach + $request->comm_skills;
         $usergrade->save();
         Alert::success('Success', 'Grade Successfuly Submitted');
         return redirect()->back();

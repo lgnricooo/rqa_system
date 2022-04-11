@@ -121,6 +121,7 @@ Route::group(['prefix'=>'secretary', 'middleware'=>['isSecretary','auth', 'Preve
     Route::get('tugscie-shs', [SecretaryController::class, 'tugscieshs'])->name('secretary.tugscieshs');
     Route::get('carigis-shs', [SecretaryController::class, 'carigishs'])->name('secretary.carigisshs');
     Route::post('store', [SecretaryController::class, 'store'])->name('secretary.grade');
+    Route::post('store', [SecretaryController::class, 'storeshs'])->name('secretary.gradeshs');
     Route::get('logout', [SecretaryController::class, 'perform'])->name('secretary.logout');
 });
 
