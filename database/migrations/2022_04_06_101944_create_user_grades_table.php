@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('demo_teach')->nullable();
             $table->string('out_achiev')->nullable();
             $table->string('comm_skills')->nullable();
+            $table->string('let_pbet')->nullable();
             $table->string('total')->nullable();
             $table->rememberToken();
             $table->timestamps();

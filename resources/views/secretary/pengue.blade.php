@@ -26,7 +26,7 @@
         <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
 
     <body data-sidebar="dark">
@@ -306,8 +306,211 @@
                                                         <td>{{ $users->email }}</td>
                                                         <td>{{ $users->con_number }}</td>
                                                         <td>{{ $users->address }}</td>
-                                                        <td><a href="" class="btn btn-primary">View Grade</a></td>
-                                                    </tr>
+                                                        <td>
+                                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                                <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target=".bd-example-modal-lg-{{$users->id}}">
+                                                                    Applicant Info
+                                                                </button>
+                                                                <div style="margin-right: 10px"></div>
+                                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target=".gradeApplicant-{{$users->id}}">
+                                                                    Enter Grade
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal fade bd-example-modal-lg-{{$users->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-lg" role="document">
+                                                                    <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">Applicant Details</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="row">
+                                                                            <div class="col-xl-12">
+                                                                                <div class="card">
+                                                                                    <div class="card-body">
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="formrow-email-input" class="form-label"><b>Name</b></label>
+                                                                                                    <h6>{{ $users->name }}</h6>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="formrow-password-input" class="form-label"><b>Unique Code</b></label>
+                                                                                                    <h6>{{ $users->unique_code }}</h6>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="mb-3">
+                                                                                            <label for="formrow-firstname-input" class="form-label"><b>Address</b></label>
+                                                                                            <h6>{{ $users->address }}</h6>
+                                                                                        </div>
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="formrow-email-input" class="form-label"><b>Email</b></label>
+                                                                                                    <h6>{{ $users->email }}</h6>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="formrow-password-input" class="form-label"><b>Contact Number</b></label>
+                                                                                                    <h6>{{ $users->con_number }}</h6>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="formrow-email-input" class="form-label"><b>Degree</b></label>
+                                                                                                    <h6>{{ $users->degree }}</h6>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="formrow-password-input" class="form-label"><b>Major</b></label>
+                                                                                                    <h6>{{ $users->major }}</h6>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="formrow-email-input" class="form-label"><b>Level Applied</b></label>
+                                                                                                    <h6>{{ $users->level }}</h6>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="formrow-password-input" class="form-label"><b>District Applied</b></label>
+                                                                                                    <h6>{{ $users->district }}</h6>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="mb-3">
+                                                                                            <label for="formrow-firstname-input" class="form-label"><b>School Applied</b></label>
+                                                                                            <h6>{{ $users->school }}</h6>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!-- end card body -->
+                                                                                </div>
+                                                                                <!-- end card -->
+                                                                            </div>
+                                                                            <!-- end col -->
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal fade gradeApplicant-{{$users->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-lg" role="document">
+                                                                    <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">Submit Grades</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <form action="{{route('secretary.grade')}}" method="POST">
+                                                                        @csrf
+                                                                        <div class="modal-body">
+                                                                            <div class="row">
+                                                                                <div class="col-xl-12">
+                                                                                    <div class="card">
+                                                                                        <div class="card-body">
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <input type="text" class="form-control" name="user_id" value="{{$users->id}}">
+                                                                                                        <input type="text" class="form-control" name="email" value="{{$users->email}}">
+                                                                                                        <input type="text" class="form-control" name="name" value="{{$users->name}}">
+                                                                                                        <input type="text" class="form-control" name="con_number" value="{{$users->con_number}}">
+                                                                                                        <input type="text" class="form-control" name="address" value="{{$users->address}}">
+                                                                                                        <label for="formrow-email-input" class="form-label"><b>Name</b></label>
+                                                                                                        <h6>{{ $users->name }}</h6>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="formrow-password-input" class="form-label"><b>Unique Code</b></label>
+                                                                                                        <h6>{{ $users->unique_code }}</h6>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="inputEducation">Education</label>
+                                                                                                        <input type="number" step="any" class="form-control" id="inputEducation" name="education" placeholder="Education Score">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="inputTeaching">Teaching Experience</label>
+                                                                                                        <input type="number" step="any" class="form-control" id="inputTeaching" name="teaching_exp" placeholder="Teaching Experience Score">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="inputlet">LET/PBET Rating</label>
+                                                                                                        <input type="number" step="any" class="form-control" id="inputlet" name="let_pbet" placeholder="LET/PBET Rating Score">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="inputst">Specialized Training</label>
+                                                                                                        <input type="number" step="any" class="form-control" id="inputst" name="st_skills" placeholder="Specialized Training Score">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="inputint">Interview</label>
+                                                                                                        <input type="number" step="any" class="form-control" id="inputint" name="interview" placeholder="Interview Score">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="inputdem">Demo Teaching</label>
+                                                                                                        <input type="number" step="any" class="form-control" id="inputdem" name="demo_teach" placeholder="Demo Teaching Score">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="inputcom">Communication Skills</label>
+                                                                                                        <input type="number" step="any" class="form-control" id="inputcom" name="comm_skills" placeholder="Communication Skill Score">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                            <!-- end card body -->
+                                                                                    </div>
+                                                                                        <!-- end card -->
+                                                                                </div>
+                                                                                    <!-- end col -->
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
                                                 @endforeach
                                             </tbody>
                                         </table>
@@ -376,6 +579,9 @@
         <script src="{{asset('assets/js/pages/datatables.init.js')}}"></script>    
 
         <script src="{{asset('assets/js/app.js')}}"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
 
 

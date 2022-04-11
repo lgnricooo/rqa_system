@@ -24,5 +24,6 @@ class Grades extends Model
         'demo_teach',
         'comm_skills',
         'total',
+        'let_pbet',
     ];
 }

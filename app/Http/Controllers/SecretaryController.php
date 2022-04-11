@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Grades;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -40,7 +41,116 @@ class SecretaryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'user_id' => ['required'],
+            'name' => ['required'],
+            'address' => ['required'],
+            'email' => ['required'],
+            'con_number' => ['required'],
+            'education' => ['required'],
+            'teaching_exp' => ['required'],
+            'let_pbet' => ['required'],
+            'st_skills' => ['required'],
+            'interview' => ['required'],
+            'demo_teach' => ['required'],
+            'comm_skills' => ['required'],
+        ]);
+
+        $usergrade = new Grades();
+        $usergrade->user_id = $request->user_id;
+        $usergrade->name = $request->name;
+        $usergrade->address = $request->address;
+        $usergrade->email = $request->email;
+        $usergrade->con_number = $request->con_number;
+        $usergrade->education = $request->education;
+        $usergrade->teaching_exp = $request->teaching_exp;
+        $usergrade->let_pbet = $request->let_pbet;
+        $usergrade->st_skills = $request->st_skills;
+        $usergrade->interview = $request->interview;
+        $usergrade->demo_teach = $request->demo_teach;
+        $usergrade->comm_skills = $request->comm_skills;
+        $usergrade->out_achiev = '0';
+        $usergrade->major = 'N/A';
+        $usergrade->total = $request->education + $request->teaching_exp + $request->let_pbet + $request->st_skills + $request->interview + $request->demo_teach + $request->comm_skills;
+        $usergrade->save();
+        Alert::success('Success', 'Grade Successfuly Submitted');
+        return redirect()->back();
+    }
+
+    public function storejhs(Request $request)
+    {
+        $request->validate([
+            'user_id' => ['required'],
+            'name' => ['required'],
+            'address' => ['required'],
+            'email' => ['required'],
+            'con_number' => ['required'],
+            'education' => ['required'],
+            'teaching_exp' => ['required'],
+            'let_pbet' => ['required'],
+            'st_skills' => ['required'],
+            'interview' => ['required'],
+            'demo_teach' => ['required'],
+            'comm_skills' => ['required'],
+        ]);
+
+        $usergrade = new Grades();
+        $usergrade->user_id = $request->user_id;
+        $usergrade->name = $request->name;
+        $usergrade->address = $request->address;
+        $usergrade->email = $request->email;
+        $usergrade->con_number = $request->con_number;
+        $usergrade->education = $request->education;
+        $usergrade->teaching_exp = $request->teaching_exp;
+        $usergrade->let_pbet = $request->let_pbet;
+        $usergrade->st_skills = $request->st_skills;
+        $usergrade->interview = $request->interview;
+        $usergrade->demo_teach = $request->demo_teach;
+        $usergrade->comm_skills = $request->comm_skills;
+        $usergrade->out_achiev = '0';
+        $usergrade->major = 'N/A';
+        $usergrade->total = $request->education + $request->teaching_exp + $request->let_pbet + $request->st_skills + $request->interview + $request->demo_teach + $request->comm_skills;
+        $usergrade->save();
+        Alert::success('Success', 'Grade Successfuly Submitted');
+        return redirect()->back();
+    }
+
+    public function storeshs(Request $request)
+    {
+        $request->validate([
+            'user_id' => ['required'],
+            'name' => ['required'],
+            'address' => ['required'],
+            'email' => ['required'],
+            'con_number' => ['required'],
+            'education' => ['required'],
+            'teaching_exp' => ['required'],
+            'let_pbet' => ['required'],
+            'st_skills' => ['required'],
+            'interview' => ['required'],
+            'demo_teach' => ['required'],
+            'comm_skills' => ['required'],
+        ]);
+
+        $usergrade = new Grades();
+        $usergrade->user_id = $request->user_id;
+        $usergrade->name = $request->name;
+        $usergrade->address = $request->address;
+        $usergrade->email = $request->email;
+        $usergrade->con_number = $request->con_number;
+        $usergrade->education = $request->education;
+        $usergrade->teaching_exp = $request->teaching_exp;
+        $usergrade->let_pbet = $request->let_pbet;
+        $usergrade->st_skills = $request->st_skills;
+        $usergrade->interview = $request->interview;
+        $usergrade->demo_teach = $request->demo_teach;
+        $usergrade->comm_skills = $request->comm_skills;
+        $usergrade->out_achiev = '0';
+        $usergrade->major = 'N/A';
+        $usergrade->total = $request->education + $request->teaching_exp + $request->let_pbet + $request->st_skills + $request->interview + $request->demo_teach + $request->comm_skills;
+        $usergrade->save();
+        Alert::success('Success', 'Grade Successfuly Submitted');
+        return redirect()->back();
     }
 
     /**

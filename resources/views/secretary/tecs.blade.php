@@ -414,26 +414,108 @@
                                                                 <div class="modal-dialog modal-lg" role="document">
                                                                     <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title" id="exampleModalLabel">Applicant Details</h5>
+                                                                        <h5 class="modal-title" id="exampleModalLabel">Submit Grades</h5>
                                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                         </button>
                                                                     </div>
-                                                                    <div class="modal-body">
-                                                                        ...
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                    </div>
-                                                                    </div>
+                                                                    <form action="{{route('secretary.grade')}}" method="POST">
+                                                                        @csrf
+                                                                        <div class="modal-body">
+                                                                            <div class="row">
+                                                                                <div class="col-xl-12">
+                                                                                    <div class="card">
+                                                                                        <div class="card-body">
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <input type="text" class="form-control" name="user_id" value="{{$users->id}}">
+                                                                                                        <input type="text" class="form-control" name="email" value="{{$users->email}}">
+                                                                                                        <input type="text" class="form-control" name="name" value="{{$users->name}}">
+                                                                                                        <input type="text" class="form-control" name="con_number" value="{{$users->con_number}}">
+                                                                                                        <input type="text" class="form-control" name="address" value="{{$users->address}}">
+                                                                                                        <label for="formrow-email-input" class="form-label"><b>Name</b></label>
+                                                                                                        <h6>{{ $users->name }}</h6>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="formrow-password-input" class="form-label"><b>Unique Code</b></label>
+                                                                                                        <h6>{{ $users->unique_code }}</h6>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="inputEducation">Education</label>
+                                                                                                        <input type="number" step="any" class="form-control" id="inputEducation" name="education" placeholder="Education Score">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="inputTeaching">Teaching Experience</label>
+                                                                                                        <input type="number" step="any" class="form-control" id="inputTeaching" name="teaching_exp" placeholder="Teaching Experience Score">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="inputlet">LET/PBET Rating</label>
+                                                                                                        <input type="number" step="any" class="form-control" id="inputlet" name="let_pbet" placeholder="LET/PBET Rating Score">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="inputst">Specialized Training</label>
+                                                                                                        <input type="number" step="any" class="form-control" id="inputst" name="st_skills" placeholder="Specialized Training Score">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="inputint">Interview</label>
+                                                                                                        <input type="number" step="any" class="form-control" id="inputint" name="interview" placeholder="Interview Score">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="inputdem">Demo Teaching</label>
+                                                                                                        <input type="number" step="any" class="form-control" id="inputdem" name="demo_teach" placeholder="Demo Teaching Score">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="inputcom">Communication Skills</label>
+                                                                                                        <input type="number" step="any" class="form-control" id="inputcom" name="comm_skills" placeholder="Communication Skill Score">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                            <!-- end card body -->
+                                                                                    </div>
+                                                                                        <!-- end card -->
+                                                                                </div>
+                                                                                    <!-- end col -->
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                        </div>
+                                                                    </form>
                                                                 </div>
                                                             </div>
-                                                        </td>
-                                                    </tr>
+                                                        </div>
+                                                    </td>
+                                                </tr>
                                                 @endforeach
                                             </tbody>
                                         </table>
-        
                                     </div>
                                 </div>
                             </div> <!-- end col -->
@@ -454,7 +536,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="text-sm-end d-none d-sm-block">
-                                    Develop by John Rico C. Toribio
+                                    Developed by John Rico C. Toribio
                                 </div>
                             </div>
                         </div>
@@ -507,4 +589,5 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script src="{{asset('assets/js/app.js')}}"></script>
     </body>
+    @include('sweetalert::alert')
 </html>
