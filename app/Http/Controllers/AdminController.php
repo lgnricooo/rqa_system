@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Grades;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -340,7 +341,9 @@ class AdminController extends Controller
 
     public function cnhsshs()
     {
-        $user = User::where('school', 'Cagayan National High School (SHS)')->where('role', 3)->get();
+        $user = User::where('school', 'Cagayan National High School (SHS)')->where('role', 3)
+                            ->join('user_grades', 'user_grades.user_id', '=', 'users.id')
+                            ->get(['users.name', 'users.address', 'users.email', 'users.con_number', 'users.degree', 'users.newold', 'users.major', 'users.unique_code', 'user_grades.education', 'user_grades.teaching_exp', 'user_grades.st_skills', 'user_grades.interview', 'user_grades.demo_teach', 'user_grades.out_achiev', 'user_grades.comm_skills', 'user_grades.total']);
         return view('admin.cnhsshs', compact('user'));
     }
 
