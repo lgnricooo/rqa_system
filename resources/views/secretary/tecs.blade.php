@@ -419,7 +419,7 @@
                                                                         <span aria-hidden="true">&times;</span>
                                                                         </button>
                                                                     </div>
-                                                                    <form action="{{route('secretary.gradeshs')}}" method="POST">
+                                                                    <form action="{{route('secretary.grade')}}" method="POST">
                                                                         @csrf
                                                                         <div class="modal-body">
                                                                             <div class="row">

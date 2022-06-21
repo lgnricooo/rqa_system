@@ -123,6 +123,15 @@
                                     <span key="t-dashboards">Dashboards</span>
                                 </a>
                             </li>
+                            
+                            <li class="menu-title" key="t-menu">List of Applicants</li>
+
+                            <li>
+                                <a href="{{route('admin.list')}}" class="waves-effect">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">List of Applicants</span>
+                                </a>
+                            </li>
 
                             <li class="menu-title" key="t-apps">District</li>
 

@@ -117,6 +117,15 @@
                                 </a>
                             </li>
 
+                            <li class="menu-title" key="t-menu">List of Applicants</li>
+
+                            <li>
+                                <a href="{{route('admin.list')}}" class="waves-effect">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">List of Applicants</span>
+                                </a>
+                            </li>
+
                             <li class="menu-title" key="t-apps">District</li>
 
                             <li>
@@ -332,6 +341,26 @@
                                                     <div class="flex-grow-1">
                                                         <p class="text-muted fw-medium">Old Applicants</p>
                                                         <h4 class="mb-0">{{ $old }}</h4>
+                                                    </div>
+
+                                                    <div class="flex-shrink-0 align-self-center">
+                                                        <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
+                                                            <span class="avatar-title rounded-circle bg-primary">
+                                                                <i class="bx bx-purchase-tag-alt font-size-24"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card mini-stats-wid">
+                                            <div class="card-body">
+                                                <div class="d-flex">
+                                                    <div class="flex-grow-1">
+                                                        <p class="text-muted fw-medium">Total Submitted Grades</p>
+                                                        <h4 class="mb-0">{{ $grades }}</h4>
                                                     </div>
 
                                                     <div class="flex-shrink-0 align-self-center">
