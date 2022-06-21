@@ -143,7 +143,9 @@ class AdminController extends Controller
 
     public function tecs()
     {
-        $user = User::where('school', 'Tuguegarao East Central School')->where('role', 3)->get();
+        $user = User::where('school', 'Tuguegarao East Central School')->where('role', 3)
+                            ->join('user_grades', 'user_grades.user_id', '=', 'users.id')
+                            ->get(['users.name', 'users.address', 'users.email', 'users.con_number', 'users.degree', 'users.newold', 'users.major', 'users.unique_code', 'user_grades.education', 'user_grades.teaching_exp', 'user_grades.st_skills', 'user_grades.interview', 'user_grades.demo_teach', 'user_grades.out_achiev', 'user_grades.comm_skills', 'user_grades.total']);
         return view('admin.tecs', compact('user'));
     }
 

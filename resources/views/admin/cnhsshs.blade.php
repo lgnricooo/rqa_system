@@ -380,101 +380,125 @@
                                                                 <div class="modal-dialog modal-lg" role="document">
                                                                     <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title" id="exampleModalLabel">Submit Grades</h5>
+                                                                        <h5 class="modal-title" id="exampleModalLabel">View Grade</h5>
                                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                         </button>
                                                                     </div>
-                                                                    <form action="" method="POST">
-                                                                        @csrf
-                                                                        <div class="modal-body">
-                                                                            <div class="row">
-                                                                                <div class="col-xl-12">
-                                                                                    <div class="card">
-                                                                                        <div class="card-body">
-                                                                                            <div class="row">
-                                                                                                <div class="col-md-6">
-                                                                                                    <div class="mb-3">
-                                                                                                        <label for="formrow-email-input" class="form-label"><b>Name</b></label>
-                                                                                                        <h6>{{ $users->name }}</h6>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-md-6">
-                                                                                                    <div class="mb-3">
-                                                                                                        <label for="formrow-password-input" class="form-label"><b>Unique Code</b></label>
-                                                                                                        <h6>{{ $users->unique_code }}</h6>
-                                                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="row">
+                                                                            <div class="col-xl-12">
+                                                                                <div class="card">
+                                                                                    <div class="card-body">
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="formrow-email-input" class="form-label"><b>Name</b></label>
+                                                                                                    <h6>{{ $users->name }}</h6>
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <div class="row">
-                                                                                                <div class="col-md-6">
-                                                                                                    <div class="mb-3">
-                                                                                                        <label for="inputEducation">Education</label>
-                                                                                                        <h6>{{ $users->education }}</h6>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-md-6">
-                                                                                                    <div class="mb-3">
-                                                                                                        <label for="inputTeaching">Teaching Experience</label>
-                                                                                                        <h6>{{ $users->teaching_exp }}</h6>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div class="row">
-                                                                                                <div class="col-md-6">
-                                                                                                    <div class="mb-3">
-                                                                                                        <label for="inputlet">Outstanding Achievement</label>
-                                                                                                        <h6>{{ $users->out_achiev }}</h6>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-md-6">
-                                                                                                    <div class="mb-3">
-                                                                                                        <label for="inputst">Specialized Training</label>
-                                                                                                        <h6>{{ $users->st_skills }}</h6>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div class="row">
-                                                                                                <div class="col-md-6">
-                                                                                                    <div class="mb-3">
-                                                                                                        <label for="inputst">Interview</label>
-                                                                                                        <h6>{{ $users->interview }}</h6>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-md-6">
-                                                                                                    <div class="mb-3">
-                                                                                                        <label for="inputdem">Demo Teaching</label>
-                                                                                                        <h6>{{ $users->demo_teach }}</h6>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div class="row">
-                                                                                                <div class="col-md-6">
-                                                                                                    <div class="mb-3">
-                                                                                                        <label for="inputcom">Communication Skills</label>
-                                                                                                        <h6>{{ $users->comm_skills }}</h6>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-md-6">
-                                                                                                    <div class="mb-3">
-                                                                                                        <label for="inputdem">Total</label>
-                                                                                                        <h6>{{ $users->total }}</h6>
-                                                                                                    </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="formrow-password-input" class="form-label"><b>Unique Code</b></label>
+                                                                                                    <h6>{{ $users->unique_code }}</h6>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
-                                                                                            <!-- end card body -->
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="inputEducation">Education</label>
+                                                                                                    @if ($users->education == "")
+                                                                                                        <h6>N/A</h6>
+                                                                                                    @else
+                                                                                                        <h6>{{ $users->education }}</h6>
+                                                                                                    @endif
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="inputTeaching">Teaching Experience</label>
+                                                                                                    @if ($users->teaching_exp == "")
+                                                                                                        <h6>N/A</h6>
+                                                                                                    @else
+                                                                                                        <h6>{{ $users->teaching_exp }}</h6>
+                                                                                                    @endif
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="inputlet">Specialized Training</label>
+                                                                                                    @if ($users->st_skills == "")
+                                                                                                        <h6>N/A</h6>
+                                                                                                    @else
+                                                                                                        <h6>{{ $users->st_skills }}</h6>
+                                                                                                    @endif
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="inputst">Interview</label>
+                                                                                                    @if ($users->st_skills == "")
+                                                                                                        <h6>N/A</h6>
+                                                                                                    @else
+                                                                                                        <h6>{{ $users->st_skills }}</h6>
+                                                                                                    @endif
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="inputst">Interview</label>
+                                                                                                    @if ($users->interview == "")
+                                                                                                        <h6>N/A</h6>
+                                                                                                    @else
+                                                                                                        <h6>{{ $users->interview }}</h6>
+                                                                                                    @endif
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="inputdem">Demo Teaching</label>
+                                                                                                    @if ($users->demo_teach == "")
+                                                                                                        <h6>N/A</h6>
+                                                                                                    @else
+                                                                                                        <h6>{{ $users->demo_teach }}</h6>
+                                                                                                    @endif
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="inputcom">Communication Skills</label>
+                                                                                                    @if ($users->comm_skills == "")
+                                                                                                        <h6>N/A</h6>
+                                                                                                    @else
+                                                                                                        <h6>{{ $users->comm_skills }}</h6>
+                                                                                                    @endif
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="mb-3">
+                                                                                                    <label for="inputdem">Total</label>
+                                                                                                    <h6>{{ $users->total }}</h6>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
                                                                                     </div>
-                                                                                        <!-- end card -->
+                                                                                        <!-- end card body -->
                                                                                 </div>
-                                                                                    <!-- end col -->
+                                                                                    <!-- end card -->
                                                                             </div>
+                                                                                <!-- end col -->
                                                                         </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                        </div>
-                                                                    </form>
+                                                                    </div>
+                                                                    <div class="modal-footer">                                                                            
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </td>
