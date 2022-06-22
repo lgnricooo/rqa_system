@@ -428,11 +428,11 @@
                                                                                             <div class="row">
                                                                                                 <div class="col-md-6">
                                                                                                     <div class="mb-3">
-                                                                                                        <input type="text" class="form-control" name="user_id" value="{{$users->id}}">
-                                                                                                        <input type="text" class="form-control" name="email" value="{{$users->email}}">
-                                                                                                        <input type="text" class="form-control" name="name" value="{{$users->name}}">
-                                                                                                        <input type="text" class="form-control" name="con_number" value="{{$users->con_number}}">
-                                                                                                        <input type="text" class="form-control" name="address" value="{{$users->address}}">
+                                                                                                        <input type="hidden" class="form-control" name="user_id" value="{{$users->id}}">
+                                                                                                        <input type="hidden" class="form-control" name="email" value="{{$users->email}}">
+                                                                                                        <input type="hidden" class="form-control" name="name" value="{{$users->name}}">
+                                                                                                        <input type="hidden" class="form-control" name="con_number" value="{{$users->con_number}}">
+                                                                                                        <input type="hidden" class="form-control" name="address" value="{{$users->address}}">
                                                                                                         <label for="formrow-email-input" class="form-label"><b>Name</b></label>
                                                                                                         <h6>{{ $users->name }}</h6>
                                                                                                     </div>

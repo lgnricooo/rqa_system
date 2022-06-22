@@ -432,7 +432,7 @@
                                                                                                         <input type="hidden" class="form-control" name="name" value="{{$users->name}}">
                                                                                                         <input type="hidden" class="form-control" name="con_number" value="{{$users->con_number}}">
                                                                                                         <input type="hidden" class="form-control" name="address" value="{{$users->address}}">
-                                                                                                        <input type="hidden" class="form-control" name="address" value="{{$users->major}}">
+                                                                                                        <input type="hidden" class="form-control" name="major" value="{{$users->major}}">
                                                                                                         <label for="formrow-email-input" class="form-label"><b>Name</b></label>
                                                                                                         <h6>{{ $users->name }}</h6>
                                                                                                     </div>
